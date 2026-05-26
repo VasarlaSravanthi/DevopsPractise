@@ -6,7 +6,7 @@ if [ $USERID -ne 0 ]; then
  echo " Root User is not activated"
 fi
 sleep 3 &
-Read N
+read N
 echo "Enter 1 to continue : $N"
 
 
