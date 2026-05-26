@@ -6,5 +6,10 @@ read N2
 SUM=$(($N+$N2))
 echo "sum is $SUM"
 Movies=("KGF" "RRR" "AMB")
-echo "First Movie is ${Movies[0]}"
+if ($SUM>100){
+    echo "First Movie is ${Movies[0]}"
+}
+else
+{
 echo "All Movies = ${Movies[@]}"
+}
