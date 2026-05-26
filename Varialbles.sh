@@ -14,5 +14,4 @@ wait $!
 echo "Line number : $LINENO"
 echo "Script executed in $SECONDS seconds"
 echo "Random Number : $RANDOM"
-Dsfdsf
 echo " Exit code of previous Command :$?"
