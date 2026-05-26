@@ -6,5 +6,7 @@ echo "First Variable: $1"
 echo "ScriptName : $0"
 echo "Who is running : $USER"
 echo "In Which directory, running : $PWD"
-echo "Home Directory : $Home"
+echo "Home Directory : $HOME"
 echo "PID Of the current Script : $$"
+sleep 2
+echo "Background running PID right now : $!"
