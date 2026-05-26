@@ -3,7 +3,7 @@ echo "Enter Number N:"
 read N
 echo "Enter Number M:"
 read M
-SUM=$N+$M
+SUM=$(($N+$M))
 echo "sum is $SUM"
 Movies=("KGF" "RRR" "AMB")
 if [$SUM > 100]; then
