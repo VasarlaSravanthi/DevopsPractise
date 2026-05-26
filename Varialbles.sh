@@ -8,5 +8,5 @@ echo "Who is running : $USER"
 echo "In Which directory, running : $PWD"
 echo "Home Directory : $HOME"
 echo "PID Of the current Script : $$"
-sleep 2
+sleep 2 &
 echo "Background running PID right now : $!"
