@@ -11,5 +11,5 @@ echo " $P1: yess yess $P1 & $P3"
 
 S1=$1
 S2=$2
-echo "$P1 what are you doing"
-echo "$P2 I am working"
+echo "$S1 what are you doing"
+echo "$S2 I am working"
