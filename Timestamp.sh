@@ -8,3 +8,4 @@ sleep 10s
 echo "Script execution completed!- $T1"
 EndTime=$(date +%s)
 Time_Taken=$(($EndTime-$StartTime))
+echo "TimeTaken :: $Time_Taken"
