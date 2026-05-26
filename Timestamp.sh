@@ -7,4 +7,4 @@ StartTime=$(date)
 sleep 10s
 echo "Script execution completed!- $T1"
 EndTime=$(date)
-echo "TimeTaken=($EndTime-$StartTime)"
+TimeTaken=$(($EndTime-$StartTime))
