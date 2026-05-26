@@ -4,12 +4,8 @@ USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
  echo " Root User is not activated"
-fi
-echo "Enter 1 to continue : $N"
-read N
-
-if [ $N -eq 1 ]; then
-   sudo su
+else
+   
    echo " Root user is Activated"
    echo " Installation of MYSQL started....."
    dnf install mysql -y
