@@ -1,9 +1,5 @@
 #!/bin/bash
 
-for i in {1..100}
-do
-    echo " $i "
-done
 
 USERID=$(id -u)
 LOGS_DIR=/var/logs/shell-script
