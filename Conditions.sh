@@ -6,7 +6,7 @@ read M
 SUM=$(($N+$M))
 echo "sum is $SUM"
 Movies=("KGF" "RRR" "AMB")
-if [ $SUM > 100 ]; then
+if [ $SUM -gt 100 ]; then
     echo "First Movie is ${Movies[0]}"
 else
  echo "All Movies = ${Movies[@]}"
