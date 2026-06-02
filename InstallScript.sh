@@ -15,7 +15,6 @@ else
     else
       echo "Intsalling MYSQL is Success!!!"
     fi
-else
-   echo " Root User not activated"
-   exit 1
+
+   
 fi
