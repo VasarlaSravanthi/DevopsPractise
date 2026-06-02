@@ -19,21 +19,21 @@ Validate()
     fi
 }
 
-dnf list installed mysql
+dnf list installed mysql &>> LOG_FILE 
 if [ $? -eq 0 ]; then
     echo " Already My SQL is intsalled... Skipping Installation!!"    
 else
     echo "Intsalling MYSQL!!!"
-    dnf install my sql -y
+    dnf install my sql -y &>> LOG_FILE 
     Validate MySql $?
 fi 
 
-dnf list installed nginx
+dnf list installed nginx &>> LOG_FILE 
 if [ $? -eq 0 ]; then
     echo "Already nginx is installed Already.."
 else
     echo " Installing nginx"
-    dnf install nginx -y
+    dnf install nginx -y &>> LOG_FILE 
     Validate Nginx $?
 fi
 
