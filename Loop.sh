@@ -5,6 +5,8 @@ USERID=$(id -u)
 LOGS_DIR=/var/logs/shell-script
 LOG_FILE="$LOGS_DIR/$0.log"
 TIME_STAMP=$(date "+%Y-%m-%d %H:%M:%S")
+R="\e[31m"
+P="\e[35m"
 
 if [ $USERID -ne 0 ]; then
     echo "Please run the script with Root Access"
@@ -14,7 +16,7 @@ fi
 Validate()
 {
     if [ $2 -ne 0 ]; then
-        echo " $TIME_STAMP \e[31m [ERROR] Installing $1 is Failed..." | tee -a LOG_FILE
+        echo " $TIME_STAMP $R [ERROR] Installing $1 is Failed..." | tee -a LOG_FILE
         exit 1
     else
         echo "$TIME_STAMP [INFO] Installing $1 is Sucess!!!" | tee -a LOG_FILE
@@ -26,7 +28,7 @@ do
  echo " Installing $Package "
  dnf list installed $Package
     if [ $? -eq 0 ]; then
-        echo " \e[35m Already $Package is intsalled... Skipping Installation!!"   | tee -a LOG_FILE
+        echo "  $P Already $Package is intsalled... Skipping Installation!!"   | tee -a LOG_FILE
     else
         echo "$TIME_STAMP [INFO] Intsalling $Package !!!"
         dnf install $Package -y &>> LOG_FILE 
