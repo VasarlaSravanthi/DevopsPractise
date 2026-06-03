@@ -3,7 +3,7 @@
 
 USERID=$(id -u)
 LOGS_DIR=/var/logs/shell-script
-LOG_FILE="$LOG_DIR/$0.log"
+LOG_FILE="$LOGS_DIR/$0.log"
 TIME_STAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
 if [ $USERID -ne 0 ]; then
