@@ -2,8 +2,8 @@
 #!/bin/bash
 
 AMI_ID="ami-0220d79f3f480ecf5"
-zone_ID="Z087520515H5EQ1JOMP60"
-Domian_Name="stringsnbeads.shop"
+ZONE_ID="Z087520515H5EQ1JOMP60"
+DOMAIN_NAME="stringsnbeads.shop"
 
 for instance in $@
 do
