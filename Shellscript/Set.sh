@@ -16,15 +16,15 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
-#Validate()
+Validate()
 {
     if [ $2 -ne 0 ]; then
         echo -e " $TIME_STAMP $R [ERROR] Installing $1 is Failed... $N" | tee -a LOG_FILE
         exit 1
     else
         echo "$TIME_STAMP [INFO] Installing $1 is Sucess!!!" | tee -a LOG_FILE
-    fi
-}
+    
+
 
 for Package in $@
 do
@@ -36,3 +36,5 @@ do
         echo "$TIME_STAMP [INFO] Intsalling $Package !!!"
         dnf install $Package -y &>> LOG_FILE 
         Validate $Package $?
+    fi
+done    
