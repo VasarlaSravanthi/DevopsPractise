@@ -1,34 +1,29 @@
 #!/bin/bash
 
-LOGS_FOLDER="/var/logs/shell-script"
+LOGS_FOLDER="/var/log/roboshop"
 sudo mkdir -p $LOGS_FOLDER
-
 sudo chown -R ec2-user:ec2-user $LOGS_FOLDER
 sudo chmod -R 755 $LOGS_FOLDER
-LOG_FILE="$LOG_DIR/$0.log"
+LOGS_FILE="$LOGS_FOLDER/$0.log"
 
 USERID=$(id -u)
 R="\e[31m"
-P="\e[35m"
-N="\e[0m"
+G="\e[32m"
 Y="\e[33m"
-
-TIMESTAMP=$(data "+%Y-%m-%d %H:%M:%S")
-
-
+N="\e[0m"
+TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
 if [ $USERID -ne 0 ]; then
-    echo "$TIMESTAMP [ERROR] $R Please run the script with Root Access $N " | tee -a $LOG_FILE
+    echo -e "$TIMESTAMP [ERROR] $R Please run this script with root access $N" | tee -a $LOGS_FILE
     exit 1
 fi
 
-Validate()
-{
+VALIDATE(){
     if [ $1 -ne 0 ]; then
-        echo " $TIMESTAMP [ERROR] $2 Failed...$R FAILURE $N" | tee -a LOG_FILE
+        echo -e "$TIMESTAMP [ERROR] $2 ... $R FAILURE $N" | tee -a $LOGS_FILE
         exit 1
     else
-        echo "$TIMESTAMP [ERROR] $2 Sucess...$G SUCCESS $N" | tee -a LOG_FILE
+        echo -e "$TIMESTAMP [INFO] $2 ... $G SUCCESS $N" | tee -a $LOGS_FILE
     fi
 }
 
