@@ -1,12 +1,13 @@
 #!/bin/bash
 
-USERID=$(id -u)
+LOGS_FOLDER="/var/logs/shell-script"
 sudo mkdir -p $LOGS_FOLDER
-LOGS_DIR=/var/logs/shell-script
+
 sudo chown -R ec2-user:ec2-user $LOGS_FOLDER
 sudo chmod -R 755 $LOGS_FOLDER
 LOG_FILE="$LOG_DIR/$0.log"
 
+USERID=$(id -u)
 R="\e[31m"
 P="\e[35m"
 N="\e[0m"
