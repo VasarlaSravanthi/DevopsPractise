@@ -14,7 +14,7 @@ do
         --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=roboshop-$instance}]" \
         --query 'Instances[0].InstanceId' \
         --output text )I
-        echo "InstanceID = $INSTANCE_ID"
+        echo "InstanceID : $INSTANCE_ID"
 
 
     if [ $instance == "frontend" ]; then 
@@ -34,10 +34,10 @@ do
     #### Updating R53 Record
 
     aws route53 change-resource-record-sets \
-    --hosted-zone-id "'$zone_ID'" \
+    --hosted-zone-id $zone_ID \
     --change-batch '
             {
-            "Comment": "Updating DNS record to a new IP",
+            "Comment": "Update A record to a new IP",
             "Changes": [
                     {
                         "Action": "UPSERT",
