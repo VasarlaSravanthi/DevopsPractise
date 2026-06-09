@@ -3,8 +3,8 @@
 #export PATH=$PATH:/usr/local/bin
 
 AMI_ID="ami-0220d79f3f480ecf5"
-zone_ID="Z087520515H5EQ1JOMP60"
-Domain_Name="stringsnbeads.shop" # replace with your domain name
+ZONE_ID="Z087520515H5EQ1JOMP60"
+DOMAIN_NAME="stringsnbeads.shop" # replace with your domain name
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
