@@ -82,15 +82,16 @@ do
         fi
 
         aws route53 change-resource-record-sets \
-        --hosted-zone-id $ZONE_ID \
-        --change-batch '
+    --hosted-zone-id $ZONE_ID \
+    --change-batch '
             {
-                "Comment": "Update A record to new IP",
-                "Changes": [
+            "Comment": "Update A record to a new IP",
+            "Changes": [
                     {
                         "Action": "UPSERT",
-                        "ResourceRecordSet": {
-                            "Name": "'$R53_RECORD'",
+                        "ResourceRecordSet": 
+                        {
+                            "Name": "'$R53_Record'",
                             "Type": "A",
                             "TTL": 1,
                             "ResourceRecords": [
@@ -98,11 +99,11 @@ do
                                     "Value": "'$IP'"
                                 }
                             ]
-                        }
+                         }
                     }
-                ]
+                 ]
             }
-        '
+     '
         echo "updated R53 record for: $instance"
     else
         if [ $INSTANCE_ID == "None" ]; then
