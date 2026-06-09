@@ -67,14 +67,14 @@ VALIDATE $? "Added Mongo repo"
 dnf install mongodb-mongosh -y &>>$LOGS_FILE
 VALIDATE $? "Installed MongoDB client"
 
-INDEX=$(mongosh --host mongodb.shop --eval 'db.getMongo().getDBNames().indexOf("catalogue")')
+INDEX=$(mongosh --host mongodb.stringsnbeads.shop --eval 'db.getMongo().getDBNames().indexOf("catalogue")')
 
-# if [ $INDEX -lt 0 ]; then
-    mongosh --host mongodb.shop </app/db/master-data.js &>>$LOGS_FILE
+if [ $INDEX -lt 0 ]; then
+    mongosh --host mongodb.stringsnbeads.shop </app/db/master-data.js &>>$LOGS_FILE
     VALIDATE $? "Load Products"
-# else
-#     echo -e "Products already loaded ... $Y SKIPPING $N"
-# fi
+else
+    echo -e "Products already loaded ... $Y SKIPPING $N"
+fi
 
 systemctl enable catalogue &>>$LOGS_FILE
 systemctl restart catalogue &>>$LOGS_FILE
